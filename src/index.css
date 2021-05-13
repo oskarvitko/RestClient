@@ -1,13 +1,132 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "~materialize-css/dist/css/materialize.min.css";
+
+
+input.yellow-input {
+  border-bottom: 1px solid #fff!important;
+  box-shadow: 0 1px 0 0 #fff!important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input.yellow-input + label {
+  color: #ffffff!important;
+}
+
+input.yellow-input:focus {
+  border-bottom: 1px solid #ffeb3b!important;
+  box-shadow: 0 1px 0 0 #ffeb3b!important;
+}
+input.blue-input {
+  box-shadow: 0 1px 0 0 #fff!important;
+}
+
+input.blue-input + label {
+  color: #2196f3!important;
+}
+
+input.blue-input:focus {
+  border-bottom: 1px solid #2196f3!important;
+  box-shadow: 0 1px 0 0 #2196f3!important;
+}
+
+.modal__wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(0,0,0,.1);
+  backdrop-filter: blur(2px);
+  transition: opacity .2s ease;
+}
+
+.modal__wrapper.open {
+  opacity: 1;
+  height: 100%;
+}
+
+.modal__wrapper.close {
+  opacity: 0;
+  height: 0;
+}
+
+.modal__wrapper.open .modal__body {
+  transform: scale(1);
+}
+
+.modal__wrapper.close .modal__body {
+  transform: scale(0);
+}
+
+.modal__body {
+  max-width: 500px;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 10%;
+  border-radius: 10px;
+  max-height: 100%;
+  transition: all .2s ease;
+}
+
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+  margin-bottom: 10px;
+}
+
+.modal__close {
+  text-align: right;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal__content {
+  padding: 0 20px 20px 20px;
+  font-size: 15px;
+}
+
+.modal__controls {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px 20px 20px;
+}
+
+.reservation-row {
+  display: grid;
+  grid-template: auto / 200px 1fr;
+  margin-bottom: 10px;
+}
+.reservation-row:last-child {
+  margin-bottom: 0;
+}
+.modal__thead {
+  font-weight: 700;
+}
+
+.tools__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tools__item {
+  margin: 0!important;
+}
+.tools__search {
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tools__search-item {
+  margin: 0!important;
+}
+
+.datetime {
+  display: grid;
+  grid-template: 1fr / repeat(6, 115px);
+  align-items: center;
+  gap: 10px;
 }
